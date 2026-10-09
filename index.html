@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A privacy-friendly password strength analyzer that runs locally in your browser.">
+  <title>Password Strength Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand-mark" aria-hidden="true">🔐</div>
+      <div>
+        <p class="eyebrow">CYBERSECURITY TOOL</p>
+        <h1>Password Strength Analyzer</h1>
+        <p class="subtitle">Understand your password. Build a stronger one.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <label for="password">Enter a test password</label>
+      <div class="password-wrap">
+        <input id="password" type="password" autocomplete="off" spellcheck="false"
+          placeholder="Type a password to analyze…" aria-describedby="privacy-note">
+        <button id="toggle" class="show-btn" type="button" aria-label="Show password">Show</button>
+      </div>
+      <p id="privacy-note" class="privacy"><span aria-hidden="true">●</span> Your password is analyzed in this browser and is never sent to a server.</p>
+
+      <div class="meter-head">
+        <span>Strength</span>
+        <strong id="strength-label">Waiting for input</strong>
+      </div>
+      <div class="meter" role="progressbar" aria-label="Password strength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="meter">
+        <div id="meter-fill"></div>
+      </div>
+      <p id="summary" class="summary">Enter a test password to see its strength.</p>
+
+      <div class="checks">
+        <h2>Security checklist</h2>
+        <ul id="checklist">
+          <li data-check="length"><span class="check-icon">○</span> At least 12 characters</li>
+          <li data-check="lower"><span class="check-icon">○</span> Lowercase letter (a–z)</li>
+          <li data-check="upper"><span class="check-icon">○</span> Uppercase letter (A–Z)</li>
+          <li data-check="number"><span class="check-icon">○</span> Number (0–9)</li>
+          <li data-check="symbol"><span class="check-icon">○</span> Special character</li>
+          <li data-check="unique"><span class="check-icon">○</span> Not an obvious repeated or common password</li>
+        </ul>
+      </div>
+
+      <div class="recommendation">
+        <h2>Suggestions</h2>
+        <p id="suggestions">Use a long, unique passphrase or a password manager to create a password.</p>
+      </div>
+
+      <div class="actions">
+        <button id="generate" class="primary" type="button">Generate strong password</button>
+        <button id="clear" class="secondary" type="button">Clear</button>
+      </div>
+      <p id="generated-note" class="generated-note" aria-live="polite"></p>
+    </section>
+
+    <footer>
+      <p><strong>Important:</strong> This is an educational estimator, not a guarantee against cracking. Never enter a real account password into a demo tool.</p>
+      <p>Made for the Password Strength Analyzer task · HTML, CSS and JavaScript</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

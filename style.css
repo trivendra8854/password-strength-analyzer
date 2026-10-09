@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --ink: #172033;
+  --muted: #66738d;
+  --line: #e5eaf2;
+  --blue: #2e63f5;
+  --green: #0eaa78;
+  --bg: #f4f7fc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; padding: 36px 18px;
+  background: radial-gradient(circle at top left, #e8efff 0, transparent 38%), var(--bg);
+  color: var(--ink); font-family: 'DM Sans', Arial, sans-serif;
+}
+.app { max-width: 720px; margin: 0 auto; }
+.top { display: flex; align-items: center; gap: 17px; margin: 0 0 24px; }
+.brand-mark {
+  width: 58px; height: 58px; display: grid; place-items: center;
+  border-radius: 17px; background: #e3ebff; font-size: 28px;
+}
+.eyebrow { color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: 1.8px; margin: 0 0 5px; }
+h1, h2 { font-family: 'Space Grotesk', 'DM Sans', sans-serif; }
+h1 { font-size: clamp(25px, 5vw, 34px); letter-spacing: -1.1px; margin: 0; }
+.subtitle { margin: 7px 0 0; color: var(--muted); }
+.panel {
+  background: #fff; border: 1px solid var(--line); border-radius: 22px;
+  padding: clamp(20px, 5vw, 34px); box-shadow: 0 18px 55px rgba(25, 45, 90, .08);
+}
+label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+.password-wrap { display: flex; gap: 8px; }
+input {
+  width: 100%; min-width: 0; border: 1px solid #dce3ef; border-radius: 12px;
+  padding: 15px 16px; font: inherit; font-size: 15px; outline: none; color: var(--ink);
+  transition: border .2s, box-shadow .2s;
+}
+input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(46,99,245,.12); }
+button { font: inherit; font-weight: 700; border: 0; cursor: pointer; transition: transform .15s, opacity .15s; }
+button:hover { transform: translateY(-1px); }
+button:focus-visible { outline: 3px solid #9bb5ff; outline-offset: 3px; }
+.show-btn { border-radius: 10px; padding: 0 16px; background: #eef2fa; color: #3e4c68; }
+.privacy { font-size: 12px; color: var(--muted); margin: 11px 0 28px; }
+.privacy span { color: var(--green); font-size: 10px; margin-right: 5px; }
+.meter-head { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; margin-bottom: 10px; }
+.meter-head strong { color: var(--muted); }
+.meter { height: 9px; background: #edf0f6; border-radius: 99px; overflow: hidden; }
+#meter-fill { height: 100%; width: 0; background: #c8d0df; border-radius: inherit; transition: width .25s, background .25s; }
+.summary { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 12px 0 27px; }
+h2 { font-size: 17px; margin: 0 0 14px; letter-spacing: -.3px; }
+.checks { border-top: 1px solid var(--line); padding-top: 23px; }
+.checks ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 13px 20px; }
+.checks li { display: flex; gap: 9px; align-items: flex-start; color: #68748a; font-size: 13px; line-height: 1.45; }
+.check-icon { flex: 0 0 18px; font-size: 16px; color: #9aa5b7; font-weight: 700; }
+.checks li.pass { color: #147d5d; }
+.checks li.pass .check-icon { color: var(--green); }
+.recommendation { margin-top: 26px; border-radius: 14px; background: #f5f8ff; padding: 18px; border: 1px solid #e8eeff; }
+.recommendation h2 { margin-bottom: 7px; }
+.recommendation p { margin: 0; font-size: 14px; line-height: 1.65; color: #53617b; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.primary, .secondary { border-radius: 11px; padding: 13px 17px; font-size: 14px; }
+.primary { background: var(--blue); color: white; box-shadow: 0 6px 14px rgba(46,99,245,.18); }
+.secondary { background: #eef1f6; color: #36415a; }
+.generated-note { color: var(--green); font-size: 13px; margin: 12px 0 0; min-height: 18px; }
+footer { color: #78849a; font-size: 12px; line-height: 1.65; padding: 17px 5px; }
+footer p { margin: 5px 0; }
+footer strong { color: #58657b; }
+@media (max-width: 520px) {
+  body { padding: 22px 12px; }
+  .top { align-items: flex-start; }
+  .brand-mark { width: 48px; height: 48px; font-size: 23px; }
+  .checks ul { grid-template-columns: 1fr; }
+  .actions button { flex: 1; }
+}
