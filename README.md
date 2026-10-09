@@ -2,6 +2,9 @@
 
 A responsive, beginner-friendly password strength analyzer built with HTML, CSS, and vanilla JavaScript.
 
+## Live demo
+https://trivendra8854.github.io/password-strength-analyzer/
+
 ## Features
 - Checks password length, lowercase/uppercase letters, numbers, and symbols.
 - Flags a small set of common passwords, obvious sequences, and repeated characters.
